@@ -67,7 +67,7 @@ submit_button = st.button('Submit')
 
 if submit_button:
     st.success('The result is ready!', icon="✅")
-    response = requests.post(url = 'http://127.0.0.1:8000/predict',
+    response = requests.post(url = 'https://api-cwtil3b3qq-nw.a.run.app/predict',
               files={'img': uploaded_file.getvalue()})
 
 
