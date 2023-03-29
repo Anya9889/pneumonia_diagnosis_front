@@ -51,7 +51,7 @@ with col2:
         return img_html
 
     st.markdown("<p style='text-align: center ; color: grey;'>"+
-                img_to_html('web_developement/88293-lungs.gif')
+                img_to_html('88293-lungs.gif')
                 +"</p>", unsafe_allow_html=True)
 # About us and our project
 
