@@ -68,10 +68,9 @@ submit_button = st.button('Submit')
 if submit_button:
     response = requests.post(url = 'https://api-cwtil3b3qq-ew.a.run.app/predict',
               files={'img': uploaded_file.getvalue()})
-    if float(response.json()['Results'])> 80:
-        st.metric("Chance of having pneumonia", response.json()["Results"])
-    else:
-        st.write("Don't worry, you are most likely healthy!")
+
+    st.metric("Chance of having pneumonia", response.json()["Results"])
+
 
 
 # Add more text
