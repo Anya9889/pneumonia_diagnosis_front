@@ -67,11 +67,12 @@ submit_button = st.button('Submit')
 
 if submit_button:
     st.success('The result is ready!', icon="✅")
-    response = requests.post(url = 'https://api-cwtil3b3qq-nw.a.run.app/predict',
+
+    response = requests.post(url = 'https://api-cwtil3b3qq-ew.a.run.app/predict',
               files={'img': uploaded_file.getvalue()})
 
+    st.metric("Chance of having pneumonia", response.json()["Results"])
 
-    st.write(response.json())
 
 # Add more text
 
