@@ -66,12 +66,12 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 submit_button = st.button('Submit')
 
 if submit_button:
-    st.success('The result is ready!', icon="✅")
-
     response = requests.post(url = 'https://api-cwtil3b3qq-ew.a.run.app/predict',
               files={'img': uploaded_file.getvalue()})
-
-    st.metric("Chance of having pneumonia", response.json()["Results"])
+    if response.json()['Results'] > 80:
+        st.metric("Chance of having pneumonia", response.json()["Results"])
+    else:
+        st.write("Don't worry, you are most likely healthy!")
 
 
 # Add more text
